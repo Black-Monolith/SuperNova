@@ -10,7 +10,7 @@ import App from './containers/App'
  */
 
 // Basic body style reset
-cssRule('html, body', {
+cssRule('html, body, #app-root', {
   height: '100%',
   width: '100%',
   padding: 0,

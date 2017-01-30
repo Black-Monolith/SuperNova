@@ -12,6 +12,7 @@
   "author": "Chris Feijoo <christophe@feijoo.fr>",
   "license": "MIT",
   "dependencies": {
+    "csstips": "^0.0.3",
     "monolite": "^0.3.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

@@ -7,7 +7,7 @@ export const createWindow = () => {
     width: 800,
     height: 600,
     titleBarStyle: 'hidden-inset',
-    vibrancy: 'light'
+    vibrancy: 'dark'
   })
   window.loadURL(
     process.env.NODE_ENV === 'production' ?
