@@ -1,3 +1,13 @@
+<h1 align="center">
+  <img alt="SuperNova Boilerplate"
+    src="https://rawgithub.com/Black-Monolith/SuperNova/master/logo.svg">
+</h1>
+
+<p align="center">
+  <img alt="Electron + React + Redux + TypeScript + Webpack"
+    src="https://rawgithub.com/Black-Monolith/SuperNova/master/icons.svg">
+</p>
+
 SuperNova
 =========
 
