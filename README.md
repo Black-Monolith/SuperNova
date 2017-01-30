@@ -8,9 +8,6 @@
     src="https://rawgithub.com/Black-Monolith/SuperNova/master/icons.svg">
 </p>
 
-SuperNova
-=========
-
 Electron + React + Redux + TypeScript + Webpack + TypeStyle Boilerplate
 
 Development Mode
