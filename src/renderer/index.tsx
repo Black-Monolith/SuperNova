@@ -3,6 +3,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { cssRule } from 'typestyle'
 import App from './containers/App'
+import { AppContainer } from 'react-hot-loader'
 
 /**
  * Renderer Process
@@ -22,7 +23,21 @@ cssRule('html, body, #app-root', {
 // Disable zoom
 webFrame.setVisualZoomLevelLimits(1.0, 1.0)
 
-render(
-  <App projectName='SuperNova' />,
-  document.getElementById('app-root')
-)
+const renderRoot = () => {
+  // Require App again
+  const NextApp: typeof App = require('./containers/App').default
+
+  render(
+    <AppContainer>
+      <NextApp projectName='SuperNova' />
+    </AppContainer>,
+    document.getElementById('app-root')
+  )
+}
+
+renderRoot()
+
+if (module.hot)
+  module.hot.accept('./containers/App', () =>
+    renderRoot()
+  )

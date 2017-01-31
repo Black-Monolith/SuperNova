@@ -9,7 +9,8 @@ const common = require('../webpack.common')
 const config = module.exports = merge(
   common.config,
   {
-    devtool: 'inline-source-map',
+    target: 'electron',
+    devtool: 'source-map',
 
     entry: {
       main: join(common.paths.source, 'main/index')

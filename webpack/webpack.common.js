@@ -20,10 +20,9 @@ const paths = exports.paths = {
  */
 const config = exports.config =
   {
-    target: 'electron',
     resolve: {
       modules: [
-        '../node_modules'
+        'node_modules'
       ],
       extensions: ['.ts', '.tsx', '.js', '.jsx']
     }
