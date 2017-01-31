@@ -14,7 +14,7 @@ const config = module.exports = merge(
 
   {
     target: 'electron-renderer',
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
 
     entry: {
       renderer: [

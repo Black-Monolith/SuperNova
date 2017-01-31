@@ -13,7 +13,8 @@ const config = module.exports = merge.smart(
   rendererTarget,
   {
     // Use same target for both main and renderer processes
-    target: 'electron'
+    target: 'electron',
+    devtool: 'source-map'
   },
   common.parts.clean(common.paths.build),
   common.parts.setFreeVariable('process.env.NODE_ENV', 'production'),

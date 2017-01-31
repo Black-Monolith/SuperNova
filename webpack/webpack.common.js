@@ -63,16 +63,6 @@ const parts = exports.parts = {
     module: {
       loaders: [
         {
-          enforce: 'pre',
-          test: /\.js$/,
-          use: 'source-map-loader'
-        },
-        {
-          enforce: 'pre',
-          test: /\.tsx?$/,
-          use: 'source-map-loader'
-        },
-        {
           test: /\.tsx?$/,
           loaders: ['babel-loader', 'ts-loader']
         }

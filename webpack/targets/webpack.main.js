@@ -10,7 +10,7 @@ const config = module.exports = merge(
   common.config,
   {
     target: 'electron',
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
 
     entry: {
       main: join(common.paths.source, 'main/index')
@@ -18,7 +18,10 @@ const config = module.exports = merge(
 
     output: {
       path: common.paths.build,
-      filename: '[name].js'
+      filename: '[name].js',
+
+      // Write absolute modules paths in sourcemaps
+      devtoolModuleFilenameTemplate: '[absolute-resource-path]'
     }
   },
 
