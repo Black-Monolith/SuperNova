@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TitleBar from '../components/TitleBar'
 import Hello from '../components/Hello'
 import { style } from 'typestyle'
@@ -10,11 +10,13 @@ type Props = {
 
 const appStyle = style(fillParent, flex, vertical)
 
-const App = (props: Props) => (
-  <div className={appStyle}>
-    <TitleBar {...props} />
-    <Hello {...props} />
-  </div>
-)
-
-export default App
+export default class App extends Component<Props, any> {
+  render() {
+    return (
+      <div className={appStyle}>
+        <TitleBar projectName={this.props.projectName} />
+        <Hello projectName={this.props.projectName} />
+      </div>
+    )
+  }
+}

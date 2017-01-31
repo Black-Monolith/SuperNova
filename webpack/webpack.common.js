@@ -20,10 +20,9 @@ const paths = exports.paths = {
  */
 const config = exports.config =
   {
-    target: 'electron',
     resolve: {
       modules: [
-        '../node_modules'
+        'node_modules'
       ],
       extensions: ['.ts', '.tsx', '.js', '.jsx']
     }
@@ -34,6 +33,29 @@ const config = exports.config =
  * Configuration splitted in functions for modularity
  */
 const parts = exports.parts = {
+
+  rendererHotReload: () => ({
+    devServer: {
+      hot: true,
+      host: 'localhost',
+      port: 8080,
+      historyApiFallback: true
+    },
+
+    entry: {
+      renderer: [
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
+      ]
+    },
+
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin(),
+      new webpack.NoEmitOnErrorsPlugin()
+    ]
+  }),
 
   // Compile sources through TypeScript compiler
   // then Babel for additional transformations

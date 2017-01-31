@@ -9,7 +9,8 @@ const common = require('../webpack.common')
 const config = module.exports = merge(
   common.config,
   {
-    devtool: 'inline-source-map',
+    target: 'electron',
+    devtool: 'source-map',
 
     entry: {
       main: join(common.paths.source, 'main/index')
@@ -21,7 +22,7 @@ const config = module.exports = merge(
     }
   },
 
-  // If production, use production config clean()
+  // If production, use clean from production config
   common.isProduction ? {} : common.parts.clean(common.paths.build),
 
   common.parts.compileTypescript()

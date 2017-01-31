@@ -11,6 +11,10 @@ const rendererTarget = require('./targets/webpack.renderer')
 const config = module.exports = merge.smart(
   mainTarget,
   rendererTarget,
+  {
+    // Use same target for both main and renderer processes
+    target: 'electron'
+  },
   common.parts.clean(common.paths.build),
   common.parts.setFreeVariable('process.env.NODE_ENV', 'production'),
   common.parts.compileTypescript(),

@@ -8,11 +8,18 @@ const common = require('../webpack.common')
  */
 const config = module.exports = merge(
   common.config,
+
+  // Enable HotReload only for development
+  common.isProduction ? {} : common.parts.rendererHotReload(),
+
   {
-    devtool: 'inline-source-map',
+    target: 'electron-renderer',
+    devtool: 'source-map',
 
     entry: {
-      renderer: join(common.paths.source, 'renderer/index')
+      renderer: [
+        join(common.paths.source, 'renderer/index')
+      ]
     },
 
     output: {
