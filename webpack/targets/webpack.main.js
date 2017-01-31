@@ -22,7 +22,7 @@ const config = module.exports = merge(
     }
   },
 
-  // If production, use production config clean()
+  // If production, use clean from production config
   common.isProduction ? {} : common.parts.clean(common.paths.build),
 
   common.parts.compileTypescript()

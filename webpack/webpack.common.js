@@ -34,6 +34,29 @@ const config = exports.config =
  */
 const parts = exports.parts = {
 
+  rendererHotReload: () => ({
+    devServer: {
+      hot: true,
+      host: 'localhost',
+      port: 8080,
+      historyApiFallback: true
+    },
+
+    entry: {
+      renderer: [
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
+      ]
+    },
+
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin(),
+      new webpack.NoEmitOnErrorsPlugin()
+    ]
+  }),
+
   // Compile sources through TypeScript compiler
   // then Babel for additional transformations
   compileTypescript: () => ({
