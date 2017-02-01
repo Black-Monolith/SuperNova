@@ -6,6 +6,7 @@
     "jsx": "preserve",
     "sourceMap": true,
     "noImplicitAny": true,
+    "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
     "rootDir": "src",
     "outDir": "dist"
