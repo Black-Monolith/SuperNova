@@ -2,6 +2,7 @@ import { webFrame } from 'electron'
 import React from 'react'
 import { render } from 'react-dom'
 import { cssRule } from 'typestyle'
+import store from './store'
 import App from './containers/App'
 import { AppContainer } from 'react-hot-loader'
 
@@ -23,21 +24,21 @@ cssRule('html, body, #app-root', {
 // Disable zoom
 webFrame.setVisualZoomLevelLimits(1.0, 1.0)
 
-const renderRoot = () => {
+const renderApp = () => {
   // Require App again
   const NextApp: typeof App = require('./containers/App').default
 
   render(
     <AppContainer>
-      <NextApp projectName='SuperNova' />
+      <NextApp projectName='SuperNova' store={store} />
     </AppContainer>,
     document.getElementById('app-root')
   )
 }
 
-renderRoot()
-
 if (module.hot)
   module.hot.accept('./containers/App', () =>
-    renderRoot()
+    renderApp()
   )
+
+renderApp()
