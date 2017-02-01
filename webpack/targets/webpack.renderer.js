@@ -29,5 +29,6 @@ const config = module.exports = merge(
     }
   },
   common.parts.createHtmlIndex(join(common.paths.source, 'renderer/index.html')),
+  common.parts.loadImages(common.paths.images),
   common.parts.compileTypescript()
 )

@@ -11,6 +11,7 @@ const isProduction = exports.isProduction = process.env.NODE_ENV === 'production
  */
 const paths = exports.paths = {
   source: join(projectRoot, 'src'),
+  images: join(projectRoot, 'src/renderer/assets/images'),
   build: join(projectRoot, 'app')
 }
 
@@ -90,6 +91,18 @@ const parts = exports.parts = {
         }
       })
     ]
+  }),
+
+  loadImages: paths => ({
+    module: {
+      loaders: [
+        {
+          test: /\.svg$/,
+          loader: 'file-loader',
+          include: paths
+        }
+      ]
+    }
   }),
 
   loadFonts: paths => ({

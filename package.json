@@ -39,6 +39,7 @@
     "cross-env": "^3.1.4",
     "csx": "^8.2.1",
     "electron": "^1.4.15",
+    "file-loader": "^0.10.0",
     "html-webpack-plugin": "^2.28.0",
     "react-hot-loader": "3.0.0-beta.6",
     "source-map-loader": "^0.1.6",

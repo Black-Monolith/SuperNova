@@ -3,6 +3,8 @@ import { style } from 'typestyle'
 import { px, rgba } from 'csx'
 import { flex, vertical } from 'csstips'
 
+import icons from '../assets/images/icons.svg'
+
 const helloStyle = style(
   flex,
   vertical,
@@ -37,6 +39,7 @@ const Hello = ({ projectName }: Props) => (
   <div className={helloStyle}>
     <h1>Hello {projectName}!</h1>
     <p>{projectName} is a simple boilerplate using amazing stuff.</p>
+    <img src={icons} />
   </div>
 )
 
