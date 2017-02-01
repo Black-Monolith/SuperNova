@@ -10,18 +10,18 @@ export const createWindow = () => {
     vibrancy: 'dark'
   })
   window.loadURL(
-    process.env.NODE_ENV === 'production' ?
+    process.env.NODE_ENV === 'production'
 
       // Load file in app folder
-      format({
+      ? format({
         pathname: join(app.getAppPath(), 'app/index.html'),
         protocol: 'file:',
         slashes: true
-      }) :
+      })
 
       // Load from Webpack DevServer
       // TODO: This should not be hardcoded
-      'http://localhost:8080/app/index.html'
+      : 'http://localhost:8080/app/index.html'
   )
   return window
 }
