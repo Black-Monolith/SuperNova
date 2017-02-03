@@ -1,8 +1,8 @@
 const merge = require('webpack-merge')
 const { join } = require('path')
 const common = require('./webpack.common')
-const mainTarget = require('./targets/webpack.main')
-const rendererTarget = require('./targets/webpack.renderer')
+const mainTarget = require('./target/main')
+const rendererTarget = require('./target/renderer')
 
 /**
  * Webpack Production Build Configuration :
