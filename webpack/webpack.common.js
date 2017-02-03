@@ -58,14 +58,12 @@ const parts = exports.parts = {
     ]
   }),
 
-  // Compile sources through TypeScript compiler
-  // then Babel for additional transformations
   compileTypescript: () => ({
     module: {
       loaders: [
         {
           test: /\.tsx?$/,
-          loaders: ['babel-loader', 'ts-loader']
+          loaders: ['ts-loader']
         }
       ]
     }
