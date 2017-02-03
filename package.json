@@ -6,7 +6,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development electron .",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.prod",
-    "dev": "concurrently -k -p [{name}] -n RENDERER,MAIN 'webpack-dev-server --config ./webpack/targets/webpack.renderer' 'webpack --watch --config ./webpack/targets/webpack.main'"
+    "dev-main": "webpack --watch --config ./webpack/targets/webpack.main",
+    "dev-renderer": "webpack-dev-server --config ./webpack/targets/webpack.renderer",
+    "dev": "concurrently -k -n RENDERER,MAIN -p [{name}] 'npm run dev-renderer' 'npm run dev-main'"
   },
   "repository": "git@github.com:Black-Monolith/SuperNova",
   "author": "Chris Feijoo <christophe@feijoo.fr>",
