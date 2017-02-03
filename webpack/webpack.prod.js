@@ -18,6 +18,5 @@ const config = module.exports = merge.smart(
   },
   common.parts.clean(common.paths.build),
   common.parts.setFreeVariable('process.env.NODE_ENV', 'production'),
-  common.parts.compileTypescript(),
   common.parts.minify()
 )
