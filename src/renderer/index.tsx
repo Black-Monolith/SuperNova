@@ -25,7 +25,6 @@ cssRule('html, body, #app-root', {
 webFrame.setVisualZoomLevelLimits(1.0, 1.0)
 
 const renderApp = () => {
-  // Require App again
   const NextApp: typeof App = require('./containers/App').default
 
   render(
@@ -37,8 +36,6 @@ const renderApp = () => {
 }
 
 if (module.hot)
-  module.hot.accept('./containers/App', () =>
-    renderApp()
-  )
+  module.hot.accept('./containers/App', renderApp)
 
 renderApp()
