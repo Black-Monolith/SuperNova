@@ -8,7 +8,6 @@ import { style } from 'typestyle'
 import { fillParent, flex, vertical } from 'csstips'
 
 type Props = {
-  projectName: string
   store: Store<State>
 }
 

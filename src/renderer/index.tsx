@@ -29,7 +29,7 @@ const renderApp = () => {
 
   render(
     <AppContainer>
-      <NextApp projectName='SuperNova' store={store} />
+      <NextApp store={store} />
     </AppContainer>,
     document.getElementById('app-root')
   )
