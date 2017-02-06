@@ -1,9 +1,16 @@
-export type IncrementAction = { type: 'INCREMENT' }
-export type DecrementAction = { type: 'DECREMENT' }
+import returnof from 'returnof'
+
+export const increment = () => ({
+  type: 'INCREMENT'
+})
+
+export const decrement = () => ({
+  type: 'DECREMENT'
+})
+
+const incrementReturn = returnof(increment)
+const decrementReturn = returnof(decrement)
 
 export type CounterAction =
-  | IncrementAction
-  | DecrementAction
-
-export const increment = (): IncrementAction => ({ type: 'INCREMENT' })
-export const decrement = (): DecrementAction => ({ type: 'DECREMENT' })
+  | typeof incrementReturn
+  | typeof decrementReturn
