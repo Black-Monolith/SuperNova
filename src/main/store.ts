@@ -18,4 +18,4 @@ const reducer = (state: State, action: Action) =>
     )
     .else(state)
 
-export default createStore<State>(reducer, initialState)
+export default createStore(reducer, initialState)

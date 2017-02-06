@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import rootReducer, { INITIAL_STATE } from './reducers'
+import rootReducer from './reducers'
 import DevTools from './containers/DevTools'
 
 const enhancer = process.env.NODE_ENV === 'production'
@@ -10,7 +10,7 @@ const enhancer = process.env.NODE_ENV === 'production'
     DevTools.instrument()
   )
 
-const store = createStore(rootReducer, INITIAL_STATE, enhancer)
+const store = createStore(rootReducer, enhancer)
 
 // Enable reducers hot reload
 if (module.hot)

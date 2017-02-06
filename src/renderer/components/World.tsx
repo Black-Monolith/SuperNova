@@ -3,9 +3,7 @@ import { style } from 'typestyle'
 import { px, rgba } from 'csx'
 import { flex, vertical } from 'csstips'
 
-import icons from '../assets/images/icons.svg'
-
-const HelloStyle = style(
+const worldStyle = style(
   flex,
   vertical,
   {
@@ -31,12 +29,11 @@ const HelloStyle = style(
   }
 )
 
-const Hello = () => (
-  <div className={HelloStyle}>
-    <h1>Hello SuperNova!</h1>
-    <p>SuperNova is a simple boilerplate using amazing stuff.</p>
-    <img src={icons} />
+const World = () => (
+  <div className={worldStyle}>
+    <h1>World.</h1>
+    <p>Donec sed odio dui.</p>
   </div>
 )
 
-export default Hello
+export default World

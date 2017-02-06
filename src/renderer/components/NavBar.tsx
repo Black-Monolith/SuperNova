@@ -1,8 +1,9 @@
 import React from 'react'
 import { style } from 'typestyle'
 import { px, rgba } from 'csx'
+import Link from './Link'
 
-const titleBarStyle = style({
+const NavBarStyle = style({
   // Make window dragable using TitleBar
   '-webkit-app-region': 'drag',
   textAlign: 'center',
@@ -14,14 +15,12 @@ const titleBarStyle = style({
   backgroundColor: rgba(12, 12, 12, 0.6).toString(),
 })
 
-type Props = {
-  projectName: string
-}
-
-const TitleBar = ({ projectName }: Props) => (
-  <div className={titleBarStyle}>
-    {projectName}
+const NavBar = () => (
+  <div className={NavBarStyle}>
+    <Link route='/home'>Hello</Link>
+    <Link route='/world'>World</Link>
+    <Link route='/counter'>Counter</Link>
   </div>
 )
 
-export default TitleBar
+export default NavBar

@@ -3,8 +3,7 @@ import { Provider } from 'react-redux'
 import { Store } from 'redux'
 import { State } from '../reducers'
 import DevTools from './DevTools'
-import TitleBar from '../components/TitleBar'
-import Hello from '../components/Hello'
+import Router from './Router'
 import { style } from 'typestyle'
 import { fillParent, flex, vertical } from 'csstips'
 
@@ -18,8 +17,7 @@ export default class App extends Component<Props, any> {
     return (
       <Provider store={this.props.store}>
         <div className={style(fillParent, flex, vertical)}>
-          <TitleBar projectName={this.props.projectName} />
-          <Hello projectName={this.props.projectName} />
+          <Router />
           <DevTools />
         </div>
       </Provider>

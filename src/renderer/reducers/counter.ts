@@ -6,6 +6,10 @@ export type CounterState = {
   value: number
 }
 
+const INITIAL_STATE = {
+  value: 0
+}
+
 const increment = (state: CounterState) =>
   set(state, _ => _.value)(value => value + 1)
 
@@ -13,7 +17,7 @@ const decrement = (state: CounterState) =>
   set(state, _ => _.value)(value => value - 1)
 
 const counterReducer: Reducer<CounterState> =
-  (state: CounterState, action: Action) =>
+  (state: CounterState = INITIAL_STATE, action: Action) =>
     when(action.type)
       .is('INCREMENT', () => increment(state))
       .is('DECREMENT', () => decrement(state))
