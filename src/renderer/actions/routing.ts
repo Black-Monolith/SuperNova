@@ -1,18 +1,13 @@
-export type GoToAction = {
-  type: 'GOTO',
-  payload: {
-    route: string
-  }
-}
+import returnof from 'returnof'
 
-export type RoutingAction =
-  | GoToAction
-
-export const goTo = (route: string): GoToAction => ({
+export const goTo = (route: string) => ({
   type: 'GOTO',
   payload: {
     route: route
   }
 })
 
-export const goHome = () => goTo('/home')
+const goToReturn = returnof(goTo)
+
+export type RoutingAction =
+  | typeof goToReturn
