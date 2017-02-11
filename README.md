@@ -8,6 +8,17 @@
     src="https://rawgithub.com/Black-Monolith/SuperNova/master/icons.svg">
 </p>
 
+<p align="center">
+  <a href="https://david-dm.org/black-monolith/LightCycle">
+    <img alt="Dependencies Status"
+      src="https://img.shields.io/david/black-monolith/supernova.svg?style=flat-square">
+  </a>
+  <a href="https://david-dm.org/black-monolith/LightCycle?type=dev">
+    <img alt="Dev Dependencies Status"
+      src="https://img.shields.io/david/dev/black-monolith/supernova.svg?style=flat-square">
+  </a>
+</p>
+
 Development Mode
 ----------------
 
