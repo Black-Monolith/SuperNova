@@ -56,5 +56,5 @@ Visual Studio Code
 
 SuperNova comes with configuration for VSCode:
 
-- `⌘` + `⇧` + `B` to build the application and choose between Development and Build modes
-- `⌘` + `R` to run the application in Debug Mode
+- <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd> to build the application and choose between Development and Build modes
+- <kbd>⌘</kbd> + <kbd>R</kbd> to run the application in Debug Mode
